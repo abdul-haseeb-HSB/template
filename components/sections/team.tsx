@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Linkedin, Twitter, Github, Mail, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function TeamSection() {
   const [ref, inView] = useInView({
@@ -42,7 +42,7 @@ export default function TeamSection() {
     },
     {
       name: 'Muhammad Talha',
-      role: 'Project Manager',
+      role: 'Team Lead',
       avatar: 'MT',
       bio: 'Experienced project manager with a focus on delivering projects on time and within budget while maintaining high quality standards.',
       portfolio: 'https://www.upwork.com/freelancers/talham151',
@@ -67,6 +67,14 @@ export default function TeamSection() {
       }
     }
   ]
+
+  // Auto-advance carousel every 4 seconds
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % team.length)
+    }, 4000)
+    return () => clearInterval(intervalId)
+  }, [team.length])
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % team.length)
