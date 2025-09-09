@@ -119,7 +119,7 @@ export default function HeroSection() {
             className="mb-8 relative"
           >
             <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 rounded-3xl shadow-2xl glow-animation relative overflow-hidden">
-              <span className="text-white font-bold text-3xl relative z-10">T</span>
+              <span className="text-white font-bold text-2xl relative z-10">DM</span>
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent" />
               <motion.div
                 animate={{ rotate: 360 }}

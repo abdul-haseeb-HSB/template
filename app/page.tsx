@@ -2,8 +2,6 @@ import Navigation from '@/components/navigation'
 import HeroSection from '@/components/sections/hero'
 import AboutSection from '@/components/sections/about'
 import ServicesSection from '@/components/sections/services'
-import WorkSection from '@/components/sections/work'
-import ClientsSection from '@/components/sections/clients'
 import TeamSection from '@/components/sections/team'
 import CareersSection from '@/components/sections/careers'
 import ContactSection from '@/components/sections/contact'
@@ -16,8 +14,6 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
-      <WorkSection />
-      <ClientsSection />
       <TeamSection />
       <CareersSection />
       <ContactSection />

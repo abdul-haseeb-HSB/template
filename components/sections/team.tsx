@@ -2,7 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
-import { Linkedin, Twitter, Github, Mail } from 'lucide-react'
+import { Linkedin, Twitter, Github, Mail, ExternalLink, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useState } from 'react'
 
 export default function TeamSection() {
   const [ref, inView] = useInView({
@@ -10,80 +11,70 @@ export default function TeamSection() {
     threshold: 0.1,
   })
 
+  const [currentSlide, setCurrentSlide] = useState(0)
+
   const team = [
     {
-      name: 'Alex Chen',
-      role: 'CEO & Co-Founder',
-      avatar: 'AC',
-      bio: 'Former Google engineer with 10+ years in software development. Passionate about building scalable solutions and leading teams to deliver exceptional results.',
+      name: 'Abdul Haseeb',
+      role: 'Senior devops and backend engineer',
+      avatar: 'AH',
+      bio: 'Expert in DevOps practices and backend development with extensive experience in cloud infrastructure and automation.',
+      portfolio: 'https://abdul-haseeb-hsb.github.io/portfolio/',
       social: {
         linkedin: '#',
         twitter: '#',
         github: '#',
-        email: 'alex@tbd.com'
+        email: 'abdul@devopsmultan.com'
       }
     },
     {
-      name: 'Sarah Williams',
-      role: 'CTO & Co-Founder',
-      avatar: 'SW',
-      bio: 'Expert in cloud architecture and DevOps with experience at AWS and Microsoft. Specializes in building robust, scalable infrastructure solutions.',
+      name: 'Muhammad Ibrahim Kamal',
+      role: 'Full Stack Developer',
+      avatar: 'IK',
+      bio: 'Full-stack developer with expertise in modern web technologies and mobile development.',
+      portfolio: 'https://ibrahim-s-portfolio-132e7.web.app/',
       social: {
         linkedin: '#',
         twitter: '#',
         github: '#',
-        email: 'sarah@tbd.com'
+        email: 'ibrahim@devopsmultan.com'
       }
     },
     {
-      name: 'Michael Rodriguez',
-      role: 'Head of Design',
-      avatar: 'MR',
-      bio: 'Award-winning UI/UX designer with 8+ years creating beautiful, intuitive user experiences. Former design lead at Apple and Airbnb.',
+      name: 'Muhammad Talha',
+      role: 'Project Manager',
+      avatar: 'MT',
+      bio: 'Experienced project manager with a focus on delivering projects on time and within budget while maintaining high quality standards.',
+      portfolio: 'https://www.upwork.com/freelancers/talham151',
       social: {
         linkedin: '#',
         twitter: '#',
         github: '#',
-        email: 'michael@tbd.com'
+        email: 'talha@devopsmultan.com'
       }
     },
     {
-      name: 'Emily Johnson',
-      role: 'Lead Frontend Engineer',
-      avatar: 'EJ',
-      bio: 'React and Next.js specialist with expertise in modern web development. Passionate about performance optimization and user experience.',
+      name: 'Abdullah Arif',
+      role: 'Front end Developer',
+      avatar: 'AA',
+      bio: 'Frontend specialist with expertise in React, Vue.js, and modern UI/UX design principles.',
+      portfolio: '',
       social: {
         linkedin: '#',
         twitter: '#',
         github: '#',
-        email: 'emily@tbd.com'
-      }
-    },
-    {
-      name: 'David Kim',
-      role: 'Lead Backend Engineer',
-      avatar: 'DK',
-      bio: 'Full-stack developer with deep expertise in Node.js, Python, and cloud services. Focuses on building scalable APIs and microservices.',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        github: '#',
-        email: 'david@tbd.com'
-      }
-    },
-    {
-      name: 'Lisa Thompson',
-      role: 'AI/ML Engineer',
-      avatar: 'LT',
-      bio: 'Machine learning specialist with PhD in Computer Science. Expert in implementing AI solutions for real-world business problems.',
-      social: {
-        linkedin: '#',
-        twitter: '#',
-        github: '#',
-        email: 'lisa@tbd.com'
+        email: 'abdullah@devopsmultan.com'
       }
     }
   ]
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % team.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + team.length) % team.length)
+  }
 
   return (
     <section id="team" className="py-20 bg-gray-50 dark:bg-dark-800">
@@ -104,79 +95,143 @@ export default function TeamSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {team.map((member, index) => (
+        {/* Carousel Container */}
+        <div className="relative">
+          {/* Carousel Wrapper */}
+          <div className="overflow-hidden">
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group bg-white dark:bg-dark-700 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
             >
-              {/* Avatar */}
-              <div className="relative mb-6">
-                <div className="w-24 h-24 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-2xl">
-                    {member.avatar}
-                  </span>
+              {team.map((member, index) => (
+                <div key={index} className="w-full flex-shrink-0 px-4">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="group bg-white dark:bg-dark-700 rounded-2xl p-8 text-center hover:shadow-xl transition-all duration-300 hover:-translate-y-2 max-w-2xl mx-auto"
+                  >
+                    {/* Avatar */}
+                    <div className="relative mb-6">
+                      <div className="w-32 h-32 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
+                        <span className="text-white font-bold text-3xl">
+                          {member.avatar}
+                        </span>
+                      </div>
+                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-green-500 rounded-full border-4 border-white dark:border-dark-700"></div>
+                    </div>
+
+                    {/* Name & Role */}
+                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                      {member.name}
+                    </h3>
+                    <p className="text-primary-600 dark:text-primary-400 font-medium mb-4 text-lg">
+                      {member.role}
+                    </p>
+
+                    {/* Bio */}
+                    <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed text-lg">
+                      {member.bio}
+                    </p>
+
+                    {/* Portfolio Link */}
+                    {member.portfolio && (
+                      <div className="mb-6">
+                        <motion.a
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          href={member.portfolio}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary-500 to-secondary-500 text-white rounded-lg hover:shadow-lg transition-all duration-300"
+                        >
+                          <ExternalLink className="w-5 h-5 mr-2" />
+                          View Portfolio
+                        </motion.a>
+                      </div>
+                    )}
+
+                    {/* Social Links */}
+                    <div className="flex justify-center space-x-3">
+                      <motion.a
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        href={member.social.linkedin}
+                        className="w-12 h-12 bg-gray-100 dark:bg-dark-600 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                        aria-label="LinkedIn"
+                      >
+                        <Linkedin className="w-6 h-6" />
+                      </motion.a>
+                      <motion.a
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        href={member.social.twitter}
+                        className="w-12 h-12 bg-gray-100 dark:bg-dark-600 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                        aria-label="Twitter"
+                      >
+                        <Twitter className="w-6 h-6" />
+                      </motion.a>
+                      <motion.a
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        href={member.social.github}
+                        className="w-12 h-12 bg-gray-100 dark:bg-dark-600 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                        aria-label="GitHub"
+                      >
+                        <Github className="w-6 h-6" />
+                      </motion.a>
+                      <motion.a
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        href={`mailto:${member.social.email}`}
+                        className="w-12 h-12 bg-gray-100 dark:bg-dark-600 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
+                        aria-label="Email"
+                      >
+                        <Mail className="w-6 h-6" />
+                      </motion.a>
+                    </div>
+                  </motion.div>
                 </div>
-                <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-8 bg-green-500 rounded-full border-4 border-white dark:border-dark-700"></div>
-              </div>
-
-              {/* Name & Role */}
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                {member.name}
-              </h3>
-              <p className="text-primary-600 dark:text-primary-400 font-medium mb-4">
-                {member.role}
-              </p>
-
-              {/* Bio */}
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                {member.bio}
-              </p>
-
-              {/* Social Links */}
-              <div className="flex justify-center space-x-3">
-                <motion.a
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  href={member.social.linkedin}
-                  className="w-10 h-10 bg-gray-100 dark:bg-dark-600 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  href={member.social.twitter}
-                  className="w-10 h-10 bg-gray-100 dark:bg-dark-600 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                  aria-label="Twitter"
-                >
-                  <Twitter className="w-5 h-5" />
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  href={member.social.github}
-                  className="w-10 h-10 bg-gray-100 dark:bg-dark-600 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                  aria-label="GitHub"
-                >
-                  <Github className="w-5 h-5" />
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  href={`mailto:${member.social.email}`}
-                  className="w-10 h-10 bg-gray-100 dark:bg-dark-600 rounded-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
-                  aria-label="Email"
-                >
-                  <Mail className="w-5 h-5" />
-                </motion.a>
-              </div>
+              ))}
             </motion.div>
-          ))}
+          </div>
+
+          {/* Navigation Buttons */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white dark:bg-dark-700 rounded-full shadow-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors z-10"
+            aria-label="Previous team member"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </motion.button>
+
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white dark:bg-dark-700 rounded-full shadow-lg flex items-center justify-center text-gray-600 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors z-10"
+            aria-label="Next team member"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </motion.button>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {team.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentSlide
+                    ? 'bg-primary-600 dark:bg-primary-400 scale-125'
+                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
+                }`}
+                aria-label={`Go to team member ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Team Values */}

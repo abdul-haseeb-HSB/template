@@ -28,7 +28,7 @@ const ThemeProviderContext = createContext<ThemeProviderState>(initialState)
 export function ThemeProvider({
   children,
   defaultTheme = 'system',
-  storageKey = 'tbd-ui-theme',
+  storageKey = 'devops-multan-ui-theme',
   attribute = 'data-theme',
   enableSystem = true,
   disableTransitionOnChange = false,

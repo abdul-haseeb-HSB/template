@@ -200,7 +200,7 @@ export default function CareersSection() {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="mailto:careers@tbd.com"
+              href="mailto:careers@devopsmultan.com"
               className="btn-primary group"
             >
               <Mail className="mr-2 w-5 h-5" />

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# 🚀 TBD Portfolio Deployment Script
+# 🚀 Devops Multan Deployment Script
 # This script helps you deploy your portfolio to various platforms
 
-echo "🚀 TBD Portfolio Deployment Script"
+echo "🚀 Devops Multan Deployment Script"
 echo "=================================="
 
 # Check if Node.js is installed
@@ -39,7 +39,7 @@ if [ $? -eq 0 ]; then
     echo "   git add ."
     echo "   git commit -m 'Initial commit'"
     echo "   git branch -M main"
-    echo "   git remote add origin https://github.com/YOUR_USERNAME/tbd-portfolio.git"
+    echo "   git remote add origin https://github.com/YOUR_USERNAME/devops-multan-website.git"
     echo "   git push -u origin main"
     echo ""
     echo "2. Deploy to Vercel (Recommended):"

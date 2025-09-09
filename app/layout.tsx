@@ -6,19 +6,19 @@ import { ThemeProvider } from '@/components/theme-provider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'TBD - We Build Ideas Into Scalable Digital Realities',
-  description: 'TBD is a software company that builds custom web & mobile apps, cloud infrastructure, and full-stack digital solutions for startups and enterprises.',
+  title: 'Devops Multan - We Build Ideas Into Scalable Digital Realities',
+  description: 'Devops Multan builds custom web & mobile apps, cloud infrastructure, and full-stack digital solutions for startups and enterprises.',
   keywords: 'software development, web development, mobile apps, cloud infrastructure, digital solutions, startup, enterprise',
-  authors: [{ name: 'TBD Software Company' }],
+  authors: [{ name: 'Devops Multan' }],
   openGraph: {
-    title: 'TBD - We Build Ideas Into Scalable Digital Realities',
+    title: 'Devops Multan - We Build Ideas Into Scalable Digital Realities',
     description: 'Custom web & mobile apps, cloud infrastructure, and full-stack digital solutions for startups and enterprises.',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TBD - We Build Ideas Into Scalable Digital Realities',
+    title: 'Devops Multan - We Build Ideas Into Scalable Digital Realities',
     description: 'Custom web & mobile apps, cloud infrastructure, and full-stack digital solutions for startups and enterprises.',
   },
 }

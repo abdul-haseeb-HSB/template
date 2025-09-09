@@ -14,8 +14,8 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: 'Email',
-      value: 'hello@tbd.com',
-      link: 'mailto:hello@tbd.com'
+      value: 'hello@devopsmultan.com',
+      link: 'mailto:hello@devopsmultan.com'
     },
     {
       icon: Phone,
@@ -26,7 +26,7 @@ export default function ContactSection() {
     {
       icon: MapPin,
       title: 'Office',
-      value: 'San Francisco, CA',
+      value: 'Building no 35-B gulshan e madina colony multan',
       link: '#'
     }
   ]
@@ -287,7 +287,7 @@ export default function ContactSection() {
                 />
                 <div className="text-center text-gray-500 dark:text-gray-400 relative z-10">
                   <MapPin className="w-12 h-12 mx-auto mb-4 text-primary-500 dark:text-primary-400" />
-                  <p className="font-medium text-gray-700 dark:text-gray-300">San Francisco, CA</p>
+                  <p className="font-medium text-gray-700 dark:text-gray-300">Building no 35-B gulshan e madina colony multan</p>
                   <p className="text-sm">Interactive map coming soon</p>
                 </div>
               </div>

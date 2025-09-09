@@ -9,7 +9,6 @@ const navItems = [
   { name: 'Home', href: '#home' },
   { name: 'About', href: '#about' },
   { name: 'Services', href: '#services' },
-  { name: 'Work', href: '#work' },
   { name: 'Team', href: '#team' },
   { name: 'Contact', href: '#contact' },
 ]
@@ -60,7 +59,7 @@ export default function Navigation() {
           >
             <div className="relative">
               <div className="w-10 h-10 bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 rounded-xl flex items-center justify-center shadow-lg glow-animation">
-                <span className="text-white font-bold text-lg">T</span>
+                <span className="text-white font-bold text-sm">DM</span>
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
@@ -74,7 +73,7 @@ export default function Navigation() {
               />
             </div>
             <div className="flex items-center space-x-1">
-              <span className="text-xl font-bold text-gray-900 dark:text-white">TBD</span>
+              <span className="text-xl font-bold text-gray-900 dark:text-white">Devops Multan</span>
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}

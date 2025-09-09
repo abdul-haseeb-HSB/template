@@ -33,7 +33,7 @@ export default function Footer() {
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
     { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Mail, href: 'mailto:hello@tbd.com', label: 'Email' }
+    { icon: Mail, href: 'mailto:hello@devopsmultan.com', label: 'Email' }
   ]
 
   return (
@@ -45,9 +45,9 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">T</span>
+                <span className="text-white font-bold text-sm">DM</span>
               </div>
-              <span className="text-2xl font-bold">TBD</span>
+              <span className="text-2xl font-bold">Devops Multan</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               We build ideas into scalable digital realities. Custom web & mobile apps, 
@@ -144,7 +144,7 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-300 text-sm mb-4 md:mb-0">
-            © 2024 TBD Software Company. All rights reserved.
+            © 2024 Devops Multan. All rights reserved.
           </div>
           <div className="flex items-center space-x-6 text-sm">
             <a href="#" className="text-gray-300 hover:text-primary-400 transition-colors">
