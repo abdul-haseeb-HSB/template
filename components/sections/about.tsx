@@ -42,8 +42,10 @@ export default function AboutSection() {
             About <span className="gradient-text">Devops Multan</span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            We are a team of passionate technologists dedicated to turning your ideas into powerful, 
-            scalable digital solutions that drive real business impact.
+            We are a team of passionate technologists dedicated to turning your ideas into powerful,
+            scalable digital solutions that drive real business impact. Our team has experience delivering
+            mission-critical, large-scale systems for industry and government, with rigorous security,
+            compliance, and reliability requirements.
           </p>
         </motion.div>
 

@@ -163,8 +163,8 @@ export default function HeroSection() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed"
           >
-            Custom web & mobile apps, cloud infrastructure, and full-stack digital solutions 
-            that transform startups and enterprises.
+            Custom web & mobile apps, cloud infrastructure, and full-stack digital solutions
+            for startups, enterprises, and mission-critical, large-scale industry and government projects.
           </motion.p>
 
           {/* Enhanced CTA Buttons */}
